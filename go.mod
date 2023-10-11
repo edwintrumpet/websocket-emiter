@@ -1,4 +1,4 @@
-module github.com/edwintrumpet/experiment-websocket
+module github.com/edwintrumpet/websocket-emiter
 
 go 1.21.0
 
