@@ -5,6 +5,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
 )
@@ -45,6 +46,10 @@ func main() {
 	r := gin.Default()
 
 	manager := NewManager()
+
+	r.Use(cors.New(cors.Config{
+		AllowOrigins: []string{"*"},
+	}))
 
 	r.GET("/ws", manager.serveWS)
 
